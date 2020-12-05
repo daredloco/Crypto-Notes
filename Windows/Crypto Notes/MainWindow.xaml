@@ -1,0 +1,73 @@
+﻿<Window x:Class="Crypto_Notes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Crypto_Notes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Encrypt">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <RichTextBox Name="rtb_encrypt" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <Label Content="Location:" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right"/>
+                    <TextBox Name="tb_encloc" Grid.Row="3" Grid.Column="2" Margin="0,2.5,0,2.5"/>
+                    <Label Content="Key:" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right"/>
+                    <TextBox Name="tb_enckey" IsReadOnly="True" Grid.Row="5" Grid.Column="2" Margin="0,2.5,0,2.5"/>
+                    <Button Name="bt_encrypt" Content="Encrypt" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Width="150"/>
+                    <Button Name="bt_encryptsave" Content="Encrypt and Save" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Width="150"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Decrypt">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <RichTextBox Name="rtb_decrypt" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <Label Content="Key:" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right"/>
+                    <TextBox Name="tb_dekey" Grid.Row="3" Grid.Column="2" Margin="0,2.5,0,2.5"/>
+                    <Button Name="bt_decryptfromfile" Content="Load from File" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Width="150"/>
+                    <Button Name="bt_decrypt" Content="Decrypt" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Width="150"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
